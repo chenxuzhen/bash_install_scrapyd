@@ -21,8 +21,8 @@ ExecStart=scrapyd
 [Install]
 WantedBy=multi-user.target " >> /usr/lib/systemd/system/scrapyd.service
 
-sudo sed -i "s/User\=user/User\=chen/" /usr/lib/systemd/system/scrapyd.service
-sudo sed -i "s/Group\=group/Group\=chen/" /usr/lib/systemd/system/scrapyd.service
+sudo sed -i "s/User\=user/User\="$USER"/" /usr/lib/systemd/system/scrapyd.service
+sudo sed -i "s/Group\=group/Group\="$USER"/" /usr/lib/systemd/system/scrapyd.service
 sudo sed -i "s|=anydirectory|="$HOME"/scrapyd|" /usr/lib/systemd/system/scrapyd.service
 scrapyd_bin=`echo $(whereis scrapyd) | cut -c 10-99`
 echo "$scrapyd_bin"
