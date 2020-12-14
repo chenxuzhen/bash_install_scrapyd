@@ -33,3 +33,5 @@ sudo systemctl enable scrapyd.service
 sudo service scrapyd start
 sudo service scrapyd status
 echo "please change bind ip address in scrapyd.conf and reload scrapyd conf"
+
+
